@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxijo3m0ob2dk"]
+[gd_scene load_steps=12 format=3 uid="uid://bxijo3m0ob2dk"]
 
 [ext_resource type="Script" uid="uid://bg135o4q6nw5u" path="res://scripts/player.gd" id="1_k7tio"]
 [ext_resource type="Texture2D" uid="uid://dye83uxl3vrpf" path="res://assets/pixel-art-tiny-hero-sprites/Owlet_Monster/Owlet_Monster_Idle_4.png" id="2_mylff"]
+[ext_resource type="Texture2D" uid="uid://c7y5ecmwp8k7h" path="res://icon.svg" id="3_mylff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqg5i"]
 atlas = ExtResource("2_mylff")
@@ -42,7 +43,10 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8157"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7tio"]
-size = Vector2(894, 20)
+size = Vector2(890, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mylff"]
+size = Vector2(128, 128)
 
 [node name="cena1" type="Node2D"]
 
@@ -65,3 +69,13 @@ position = Vector2(346, 310)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_k7tio")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(333, 267)
+scale = Vector2(0.87999755, 0.56000245)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("3_mylff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_mylff")
