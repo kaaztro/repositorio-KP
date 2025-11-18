@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://bxijo3m0ob2dk"]
+[gd_scene load_steps=2 format=3 uid="uid://bxijo3m0ob2dk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8157"]
 
 [node name="cena1" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
 
 [node name="collision" type="CollisionShape2D" parent="player"]
+position = Vector2(211, 181)
+shape = SubResource("CapsuleShape2D_i8157")
