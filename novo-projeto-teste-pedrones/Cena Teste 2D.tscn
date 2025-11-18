@@ -1,14 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxijo3m0ob2dk"]
+[gd_scene format=3 uid="uid://bxijo3m0ob2dk"]
 
-[ext_resource type="Texture2D" uid="uid://c7y5ecmwp8k7h" path="res://icon.svg" id="1_hxf3u"]
+[node name="cena1" type="Node2D"]
 
-[node name="CenaTeste2d" type="Node2D"]
+[node name="player" type="CharacterBody2D" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(24.453123, 14.5625)
-texture = ExtResource("1_hxf3u")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(53.5, -645.5)
-scale = Vector2(16.757813, 9.1328125)
-texture = ExtResource("1_hxf3u")
+[node name="collision" type="CollisionShape2D" parent="player"]
