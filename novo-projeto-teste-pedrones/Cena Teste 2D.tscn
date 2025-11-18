@@ -54,14 +54,14 @@ position = Vector2(26, 5)
 sprite_frames = SubResource("SpriteFrames_d4cje")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6201182
+frame_progress = 0.93188953
 
 [node name="collision" type="CollisionShape2D" parent="player"]
 position = Vector2(24, 8)
 shape = SubResource("CapsuleShape2D_i8157")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(346, 310)
+position = Vector2(345, 311)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_k7tio")
