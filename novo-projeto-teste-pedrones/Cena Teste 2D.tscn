@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxijo3m0ob2dk"]
+[gd_scene load_steps=19 format=3 uid="uid://bxijo3m0ob2dk"]
 
 [ext_resource type="Script" uid="uid://bg135o4q6nw5u" path="res://scripts/player.gd" id="1_k7tio"]
 [ext_resource type="Texture2D" uid="uid://bcfmb23xjj43h" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_mqg5i"]
 [ext_resource type="Texture2D" uid="uid://dye83uxl3vrpf" path="res://assets/pixel-art-tiny-hero-sprites/Owlet_Monster/Owlet_Monster_Idle_4.png" id="2_mylff"]
 [ext_resource type="Texture2D" uid="uid://brqfhnwtuhqjp" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_vwbca"]
 [ext_resource type="Texture2D" uid="uid://c7y5ecmwp8k7h" path="res://icon.svg" id="3_mylff"]
+[ext_resource type="Script" uid="uid://b6g0tvdifyw00" path="res://scripts/FlyingEnemy.gd" id="6_1s3io"]
+[ext_resource type="Texture2D" uid="uid://cp2ew24p0a1ij" path="res://assets/pixel-art-tiny-hero-sprites/Owlet_Monster/Rock2.png" id="7_d4cje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwbca"]
 texture = ExtResource("1_mqg5i")
@@ -134,6 +136,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mylff"]
 size = Vector2(128, 128)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmmp8"]
+radius = 7.0
+
 [node name="cena1" type="Node2D"]
 
 [node name="level" type="TileMap" parent="."]
@@ -141,7 +146,7 @@ position = Vector2(0, -2)
 tile_set = SubResource("TileSet_x734l")
 format = 2
 layer_0/name = "chao"
-layer_0/tile_data = PackedInt32Array(1245184, 196608, 1, 1310720, 65536, 4, 1245185, 262144, 1, 1310721, 262144, 6, 1245186, 262144, 1, 1310722, 262144, 6, 1245187, 262144, 1, 1310723, 262144, 6, 1245188, 262144, 1, 1310724, 262144, 6, 1245189, 262144, 1, 1310725, 262144, 6, 1245190, 262144, 1, 1310726, 262144, 6, 1245191, 262144, 1, 1310727, 262144, 6, 1245192, 262144, 1, 1310728, 262144, 6, 1245193, 262144, 1, 1310729, 262144, 6, 1245194, 262144, 1, 1310730, 262144, 6, 1245195, 262144, 1, 1310731, 262144, 6, 1245196, 262144, 1, 1310732, 262144, 6, 1245197, 262144, 1, 1310733, 262144, 6, 1245198, 262144, 1, 1310734, 262144, 6, 1245199, 262144, 1, 1310735, 262144, 6, 1245200, 262144, 1, 1310736, 262144, 6, 1245201, 262144, 1, 1310737, 262144, 6, 1245202, 262144, 1, 1310738, 262144, 6, 1245203, 262144, 1, 1310739, 262144, 6, 1245204, 262144, 1, 1310740, 262144, 6, 1245205, 262144, 1, 1310741, 262144, 6, 1245206, 262144, 1, 1310742, 262144, 6, 1245207, 262144, 1, 1310743, 262144, 6, 1245208, 262144, 1, 1310744, 262144, 6, 1245209, 262144, 1, 1310745, 262144, 6, 1245210, 262144, 1, 1310746, 262144, 6, 1245211, 262144, 1, 1310747, 262144, 6, 1245212, 262144, 1, 1310748, 262144, 6, 1245213, 262144, 1, 1310749, 262144, 6, 1245214, 262144, 1, 1310750, 262144, 6, 1245215, 327680, 1, 1310751, 458752, 4, 1048585, 196608, 1, 1114121, 196608, 2, 1179657, 196608, 3, 1048586, 262144, 1, 1114122, 262144, 2, 1179658, 262144, 3, 1048587, 327680, 1, 1114123, 327680, 2, 1179659, 327680, 3)
+layer_0/tile_data = PackedInt32Array(1245184, 196608, 1, 1310720, 65536, 4, 1245185, 262144, 1, 1310721, 262144, 6, 1245186, 262144, 1, 1310722, 262144, 6, 1245187, 262144, 1, 1310723, 262144, 6, 1245188, 262144, 1, 1310724, 262144, 6, 1245189, 262144, 1, 1310725, 262144, 6, 1245190, 262144, 1, 1310726, 262144, 6, 1245191, 262144, 1, 1310727, 262144, 6, 1245192, 262144, 1, 1310728, 262144, 6, 1245193, 262144, 1, 1310729, 262144, 6, 1245194, 262144, 1, 1310730, 262144, 6, 1245195, 262144, 1, 1310731, 262144, 6, 1245196, 262144, 1, 1310732, 262144, 6, 1245197, 262144, 1, 1310733, 262144, 6, 1245198, 262144, 1, 1310734, 262144, 6, 1245199, 262144, 1, 1310735, 262144, 6, 1245200, 262144, 1, 1310736, 262144, 6, 1245201, 262144, 1, 1310737, 262144, 6, 1245202, 262144, 1, 1310738, 262144, 6, 1245203, 262144, 1, 1310739, 262144, 6, 1245204, 262144, 1, 1310740, 262144, 6, 1245205, 262144, 1, 1310741, 262144, 6, 1245206, 262144, 1, 1310742, 262144, 6, 1245207, 262144, 1, 1310743, 262144, 6, 1245208, 262144, 1, 1310744, 262144, 6, 1245209, 262144, 1, 1310745, 262144, 6, 1245210, 262144, 1, 1310746, 262144, 6, 1245211, 262144, 1, 1310747, 262144, 6, 1245212, 262144, 1, 1310748, 262144, 6, 1245213, 262144, 1, 1310749, 262144, 6, 1245214, 262144, 1, 1310750, 262144, 6, 1245215, 327680, 1, 1310751, 458752, 4, 1048585, 196608, 1, 1114121, 196608, 2, 1179657, 196608, 2, 1048586, 262144, 1, 1114122, 262144, 2, 1179658, 262144, 3, 1048587, 327680, 1, 1114123, 327680, 2, 1179659, 327680, 2)
 layer_1/name = "dec-cenario"
 layer_1/tile_data = PackedInt32Array(1114117, 589825, 1, 1114142, 589825, 1)
 
@@ -169,3 +174,15 @@ texture = ExtResource("3_mylff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource("RectangleShape2D_mylff")
+
+[node name="Inimigo Voador" type="RigidBody2D" parent="."]
+position = Vector2(426, 82)
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("6_1s3io")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inimigo Voador"]
+texture = ExtResource("7_d4cje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo Voador"]
+shape = SubResource("CircleShape2D_tmmp8")
